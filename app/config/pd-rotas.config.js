@@ -8,7 +8,7 @@ function config($stateProvider) {
         templateUrl:'app/views/carro/cadastro-carro.html',
         resolve:{
             deps: function ($ocLazyLoad) {
-                $ocLazyLoad.load('app/views/carro/cadastro-carro-controller.js')
+                return $ocLazyLoad.load('app/views/carro/cadastro-carro-controller.js')
             }
         }
     };
@@ -19,7 +19,7 @@ function config($stateProvider) {
         templateUrl:'app/views/carro/pesquisa-carro.html',
         resolve:{
             deps: function ($ocLazyLoad) {
-                $ocLazyLoad.load('app/views/carro/pesquisa-carro-controller.js')
+                return $ocLazyLoad.load('app/views/carro/pesquisa-carro-controller.js')
             }
         }
     };
