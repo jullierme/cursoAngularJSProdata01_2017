@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Curso</title>
+
+    <!-- -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="node_modules/angular-toastr/dist/angular-toastr.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="node_modules/angular-ui-grid/ui-grid.css">
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+    <!-- -->
+
+    <!-- imports externos -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-messages/angular-messages.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.js"></script>
+
+    <script src="node_modules/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="node_modules/angular-ui-grid/ui-grid.js"></script>
+    <script src="node_modules/angular-material/angular-material.js"></script>
+    <script src="node_modules/angular-i18n/angular-locale_pt-br.js"></script>
+    <!-- fim imports externos -->
+
+    <script src="app/config/pd-app.module.js"></script>
+    <script src="app/controller/index.controller.js"></script>
+    <script src="app/services/pd-alert.service.js"></script>
+    <script src="app/filter/pd-maiusculo.filter.js"></script>
+
+
+</head>
+<body ng-app="pdCurso" class="container"
+      md-theme="blue">
+
+<div ng-controller="IndexController">
+
+    <form name="formPessoa" novalidate ng-submit="salvar()">
+        <div class="panel">
+            <div class="panel-heading">
+                <md-toolbar class="md-hue-2">
+                    <div class="md-toolbar-tools">
+                        Cadastro de pessoa
+                    </div>
+                </md-toolbar>
+            </div>
+
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <md-input-container>
+                            <label>Nome</label>
+                            <input ng-model="entidade.nome"
+                                   name="nome"
+                                   ng-required="true"
+                                   ng-maxlength="10"
+                                   ng-minlength="2">
+                            <div ng-messages="formPessoa.nome.$error"
+                                 ng-if="formPessoa.nome.$invalid && formPessoa.nome.$touched">
+                                <div ng-messages-include="app/templates/ng-messages.html"></div>
+                            </div>
+                        </md-input-container>
+                    </div>
+
+                    <div class="col-md-3">
+                        <md-input-container>
+                            <label>Sobrenome</label>
+                            <input ng-model="entidade.sobrenome">
+                        </md-input-container>
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Sexo</label>
+                            <md-select ng-model="entidade.sexo">
+                                <md-option value="M">Masculino</md-option>
+                                <md-option value="F">Feminino</md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                    <div class="col-md-3">
+                        <md-input-container>
+                            <label>Data de nascimento</label>
+                            <md-datepicker ng-model="entidade.nascimento"></md-datepicker>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <md-input-container>
+                            <label>Cor</label>
+                            <input ng-model="entidade.cor">
+                        </md-input-container>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <md-button
+                        class="md-raised md-primary"
+                        type="submit">
+                    Salvar
+                </md-button>
+                <md-button
+                        class="md-raised md-primary"
+                        style="background-color: #f0ad4e">
+                    Limpar
+                </md-button>
+                <md-button
+                        class="md-raised md-warn">
+                    Excluir
+                </md-button>
+            </div>
+        </div>
+
+        <div ui-grid="gridOptions"
+             ui-grid-selection></div>
+        <!--
+        <table class="table">
+            <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Sexo</th>
+                <th>Dt nascimento</th>
+                <th>Ações</th>
+            </tr>
+            <tr ng-repeat="pessoa in listaDePessoas">
+                <td ng-bind="::pessoa.nome | maiusculo"></td>
+                <td ng-bind="::pessoa.sobrenome"></td>
+                <td ng-bind="::pessoa.sexo"></td>
+                <td ng-bind="::pessoa.nascimento | date : 'dd/MM/yyyy'"></td>
+                <td>
+                    <button class="btn btn-primary"
+                            ng-click="editar(pessoa)">
+                        Editar
+                    </button>
+                    <button class="btn btn-danger"
+                            ng-click="excluir($index)">
+                        Excluir
+                    </button>
+
+                    <button class="btn btn-danger"
+                            ng-click="excluirPessoa(pessoa)">
+                        Excluir
+                    </button>
+                </td>
+            </tr>
+        </table>
+        -->
+    </form>
+</div>
+</body>
+</html>

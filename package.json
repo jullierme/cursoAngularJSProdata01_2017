@@ -9,11 +9,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.6.1",
-    "angular-animate": "^1.6.1",
-    "angular-messages": "^1.6.1",
+    "angular": "v1.5.11",
+    "angular-animate": "v1.5.11",
+    "angular-aria": "v1.5.11",
+    "angular-i18n": "v1.5.11",
+    "angular-material": "^1.1.1",
+    "angular-messages": "v1.5.11",
     "angular-toastr": "^2.1.1",
+    "angular-ui-grid": "^4.0.2",
+    "angular-ui-router": "^0.4.2",
     "bootstrap": "^3.3.7",
-    "jquery": "^3.1.1"
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.1.1",
+    "oclazyload": "^1.0.9"
   }
 }

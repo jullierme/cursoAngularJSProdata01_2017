@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Curso</title>
+
+    <!-- -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="node_modules/angular-toastr/dist/angular-toastr.css">
+
+    <!-- -->
+
+    <!-- imports externos -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-messages/angular-messages.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+
+    <script src="node_modules/angular-toastr/dist/angular-toastr.tpls.js"></script>
+
+    <!-- fim imports externos -->
+
+    <script src="app/config/pd-app.module.js"></script>
+    <script src="app/controller/index4.controller.js"></script>
+    <script src="app/services/pd-alert.service.js"></script>
+    <script src="app/filter/pd-maiusculo.filter.js"></script>
+
+    <style>
+        .div1{
+            background-color: red;
+            height: 200px;
+            width: 250px;
+            border: inset;
+            border-color: black;
+            border-width: 2px;
+        }
+
+        .div2{
+            background-color: blue;
+            height: 220px;
+            width: 250px;
+        }
+
+        .div3{
+            border-color: red;
+            border-width: 3px;
+            border-style: inset;
+        }
+    </style>
+
+</head>
+
+
+<body ng-app="pdCurso" class="container">
+
+
+<div ng-controller="IndexController">
+
+    <input ng-model="cor">
+
+    <div ng-style="cssDaDiv"></div>
+
+    <div ng-class="classeCss"></div>
+
+    <div ng-class="{'div2' : cor === '1'}"></div>
+</div>
+</body>
+</html>

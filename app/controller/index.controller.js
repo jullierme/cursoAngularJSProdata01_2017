@@ -1,6 +1,8 @@
 angular.module('pdCurso')
     .controller('IndexController', IndexController);
 
+IndexController.$inject = ['$scope', 'PdAlertService', '$filter'];
+
 function IndexController($scope, PdAlertService, $filter) {
     $scope.entidade = {};
     $scope.listaDePessoas = [];
@@ -10,12 +12,46 @@ function IndexController($scope, PdAlertService, $filter) {
     $scope.editar = editar;
     $scope.excluir = excluir;
     $scope.excluirPessoa = excluirPessoa;
+    $scope.getStyleDaLinha = getStyleDaLinha;
+
+    $scope.gridOptions = {
+        data: 'listaDePessoas',
+        enableColumnMenus: false,
+        enableRowSelection:true,
+        rowTemplate:'app/templates/row-template.html',
+        columnDefs: [
+            {name: 'Nome', field: 'nome'},
+            {name: 'Sobrenome', field: 'sobrenome', width: 150},
+            {name: 'Sexo', field: 'sexo', width: 150},
+            {
+                name: 'Data de nascimento',
+                field: 'nascimento',
+                width: 190,
+                cellTemplate: 'app/templates/cell-template-date.html'
+            },
+            {
+                name: '', field: 'excluir', width: 40,
+                cellTemplate: 'app/templates/cell-template-excluir.html',
+                onClick:excluir
+            }
+        ]
+    };
+
+    function getStyleDaLinha(linhaSelecionada) {
+        var style = {};
+
+        if(linhaSelecionada.cor){
+            style.backgroundColor = linhaSelecionada.cor;
+        }
+
+        return style;
+    }
 
     function salvar() {
         if ($scope.formPessoa.$invalid) {
-            
+
             angular.forEach($scope.formPessoa.$error, function (errorField) {
-                for(var i = 0; i < errorField.length; i ++){
+                for (var i = 0; i < errorField.length; i++) {
                     errorField[i].$setTouched();
                 }
             });

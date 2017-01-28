@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Curso</title>
+
+    <!-- -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="node_modules/angular-toastr/dist/angular-toastr.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="node_modules/angular-ui-grid/ui-grid.css">
+    <!-- -->
+
+    <!-- imports externos -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-messages/angular-messages.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+
+    <script src="node_modules/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="node_modules/angular-ui-grid/ui-grid.js"></script>
+
+    <!-- fim imports externos -->
+
+    <script src="app/config/pd-app.module.js"></script>
+    <script src="app/controller/index6.controller.js"></script>
+    <script src="app/services/pd-alert.service.js"></script>
+    <script src="app/filter/pd-maiusculo.filter.js"></script>
+
+
+
+</head>
+<body ng-app="pdCurso" class="container">
+
+
+<div ng-controller="Index6Controller">
+
+    <button ng-click="dipararEvento()">$broadcast</button>
+</div>
+</body>
+</html>

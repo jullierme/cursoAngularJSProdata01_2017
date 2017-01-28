@@ -1,0 +1,11 @@
+node_modules
+
+crie o arquivo .gitingore
+crie o repositorio
+copie os comandos git
+cole no terminal
+clique em enter
+
+git add .
+git commit -m "commit inicial"
+git push
