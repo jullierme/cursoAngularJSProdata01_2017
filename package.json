@@ -13,14 +13,15 @@
     "angular-animate": "v1.5.11",
     "angular-aria": "v1.5.11",
     "angular-i18n": "v1.5.11",
-    "angular-material": "^1.1.1",
+    "angular-loading-bar": "^0.9.0",
+    "angular-material": "v1.1.1",
     "angular-messages": "v1.5.11",
-    "angular-toastr": "^2.1.1",
-    "angular-ui-grid": "^4.0.2",
-    "angular-ui-router": "^0.4.2",
-    "bootstrap": "^3.3.7",
-    "font-awesome": "^4.7.0",
-    "jquery": "^3.1.1",
-    "oclazyload": "^1.0.9"
+    "angular-toastr": "v2.1.1",
+    "angular-ui-grid": "v4.0.2",
+    "angular-ui-router": "v0.4.2",
+    "bootstrap": "v3.3.7",
+    "font-awesome": "v4.7.0",
+    "jquery": "v3.1.1",
+    "oclazyload": "v1.0.9"
   }
 }

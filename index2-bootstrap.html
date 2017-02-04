@@ -25,7 +25,7 @@
 <body ng-app="pdCurso" class="container">
 
 
-<div ng-controller="IndexController">
+<div ng-controller="IndexController as vm">
 
     <!--
     <div class="row">
@@ -60,7 +60,7 @@
                         <label>Nome</label>
                         <input type="text"
                                class="form-control"
-                               ng-model="entidade.nome"
+                               ng-model="vm.entidade.nome"
                         >
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                         <label>Sobrenome</label>
                         <input type="text"
                                class="form-control"
-                               ng-model="entidade.sobrenome"
+                               ng-model="vm.entidade.sobrenome"
                         >
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                     <div class="form-group">
                         <label>Sexo</label>
                         <select class="form-control"
-                                ng-model="entidade.sexo">
+                                ng-model="vm.entidade.sexo">
                             <option value="M">Masculino</option>
                             <option value="F">Feminino</option>
                         </select>
@@ -89,10 +89,10 @@
         </div>
         <div class="panel-footer">
             <button class="btn btn-primary"
-                    ng-click="salvar()">Salvar
+                    ng-click="vm.salvar()">Salvar
             </button>
             <button class="btn btn-warning"
-                    ng-click="limpar()">Limpar
+                    ng-click="vm.limpar()">Limpar
             </button>
             <button class="btn btn-danger">Excluir</button>
         </div>
@@ -104,22 +104,22 @@
             <th>Sexo</th>
             <th>Ações</th>
         </tr>
-        <tr ng-repeat="pessoa in listaDePessoas">
+        <tr ng-repeat="pessoa in vm.listaDePessoas">
             <td ng-bind="::pessoa.nome"></td>
             <td ng-bind="::pessoa.sobrenome"></td>
             <td ng-bind="::pessoa.sexo"></td>
             <td>
                 <button class="btn btn-primary"
-                        ng-click="editar(pessoa)">
+                        ng-click="vm.editar(pessoa)">
                     Editar
                 </button>
                 <button class="btn btn-danger"
-                        ng-click="excluir($index)">
+                        ng-click="vm.excluir($index)">
                     Excluir
                 </button>
 
                 <button class="btn btn-danger"
-                        ng-click="excluirPessoa(pessoa)">
+                        ng-click="vm.excluirPessoa(pessoa)">
                     Excluir
                 </button>
             </td>

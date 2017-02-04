@@ -58,15 +58,15 @@
 <body ng-app="pdCurso" class="container">
 
 
-<div ng-controller="IndexController">
+<div ng-controller="IndexController as vm">
 
-    <input ng-model="cor">
+    <input ng-model="vm.cor">
 
-    <div ng-style="cssDaDiv"></div>
+    <div ng-style="vm.cssDaDiv"></div>
 
-    <div ng-class="classeCss"></div>
+    <div ng-class="vm.classeCss"></div>
 
-    <div ng-class="{'div2' : cor === '1'}"></div>
+    <div ng-class="{'div2' : vm.cor === '1'}"></div>
 </div>
 </body>
 </html>

@@ -1,26 +1,32 @@
-angular.module('pdCurso',[
-    'ngMessages',
-    'ngAnimate',
-    'toastr',
-    'ui.grid',
-    'ui.grid.selection',
-    'ngMaterial',
-    'ui.router',
-    'oc.lazyLoad'
-]);
+(function () {
+    'use strict';
 
-angular.module('pdCurso')
-    .config(config);
+    angular.module('pdCurso',[
+        'ngMessages',
+        'ngAnimate',
+        'toastr',
+        'ui.grid',
+        'ui.grid.selection',
+        'ngMaterial',
+        'ui.router',
+        'oc.lazyLoad',
+        'angular-loading-bar'
+    ]);
 
-function config($mdThemingProvider, $compileProvider) {
-    $mdThemingProvider.theme('blue')
-        .primaryPalette('blue')
-        .accentPalette('pink');
+    angular.module('pdCurso')
+        .config(config);
 
-    $mdThemingProvider.theme('green')
-        .primaryPalette('green')
-        .accentPalette('pink');
+    function config($mdThemingProvider, $compileProvider,
+                    cfpLoadingBarProvider) {
+        $mdThemingProvider.theme('blue')
+            .primaryPalette('blue')
+            .accentPalette('pink');
 
-    //correção incompatibilidades angularjs 1.6
-    $compileProvider.preAssignBindingsEnabled(true);
-}
+        $mdThemingProvider.theme('green')
+            .primaryPalette('green')
+            .accentPalette('pink');
+
+        cfpLoadingBarProvider.includeSpinner = false;
+    }
+
+})();

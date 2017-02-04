@@ -1,27 +1,39 @@
-angular.module('pdCurso')
-    .controller('IndexController',IndexController);
+(function () {
+    'use strict';
 
-function IndexController($scope) {
+    angular.module('pdCurso')
+        .controller('IndexController',IndexController);
 
-    $scope.$watch('cor', onWatchCor);
+    IndexController.$inject = ['$scope'];
 
-    $scope.cssDaDiv = {};
-    $scope.cssDaDiv.width = '150px';
-    $scope.cssDaDiv.height = '150px';
+    function IndexController($scope) {
+        var vm = this;
 
-    $scope.classeCss = '';
+        vm.cssDaDiv = {};
+        vm.classeCss = '';
 
-    function onWatchCor(newValue, oldValue) {
-        if(newValue === oldValue){
-            return;
+        iniciar();
+
+        function iniciar() {
+            $scope.$watch('vm.cor', onWatchCor);
+
+            vm.cssDaDiv.width = '150px';
+            vm.cssDaDiv.height = '150px';
         }
 
-        $scope.cssDaDiv.backgroundColor = newValue;
+        function onWatchCor(newValue, oldValue) {
+            if(newValue === oldValue){
+                return;
+            }
 
-        if(newValue.toString() === '1'){
-            $scope.classeCss = 'div1';
-        } else if(newValue.toString() === '2'){
-            $scope.classeCss = 'div2 div3';
+            vm.cssDaDiv.backgroundColor = newValue;
+
+            if(newValue.toString() === '1'){
+                vm.classeCss = 'div1';
+            } else if(newValue.toString() === '2'){
+                vm.classeCss = 'div2 div3';
+            }
         }
     }
-}
+
+})();

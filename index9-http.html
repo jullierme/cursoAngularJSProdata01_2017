@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Curso</title>
+
+    <!-- -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="node_modules/angular-toastr/dist/angular-toastr.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="node_modules/angular-ui-grid/ui-grid.css">
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+    <link rel="stylesheet" href="node_modules/angular-loading-bar/build/loading-bar.css">
+
+
+    <link rel="stylesheet" href="app/css/pd-app.css">
+    <!-- -->
+
+    <!-- imports externos -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-messages/angular-messages.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.js"></script>
+
+    <script src="node_modules/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="node_modules/angular-ui-grid/ui-grid.js"></script>
+    <script src="node_modules/angular-material/angular-material.js"></script>
+    <script src="node_modules/angular-i18n/angular-locale_pt-br.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="node_modules/oclazyload/dist/ocLazyLoad.js"></script>
+    <script src="node_modules/angular-loading-bar/build/loading-bar.js"></script>
+
+    <!-- fim imports externos -->
+
+    <script src="app/config/pd-app.module.js"></script>
+    <script src="app/config/pd-rotas.config.js"></script>
+    <script src="app/services/pd-alert.service.js"></script>
+    <script src="app/filter/pd-maiusculo.filter.js"></script>
+    <script src="app/controller/index9.controller.js"></script>
+
+
+</head>
+<body ng-app="pdCurso"
+      ng-controller="Index9Controller as vm">
+
+<button ng-click="vm.carregarListaDeDados()"
+        ng-disabled="vm.isProcessando"
+        class="btn btn-primary">
+    Carregar lista de dados
+</button>
+
+<div ui-grid="vm.gridOptions"></div>
+
+{{vm.listaDeDados.length}}
+</body>
+</html>

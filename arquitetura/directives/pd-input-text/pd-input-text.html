@@ -1,0 +1,25 @@
+<div ng-class="::classColspan">
+    <div class="form-group"
+         ng-class="{'has-error':
+         formCtrl[inputName].$invalid &&
+         formCtrl[inputName].$touched}">
+        <div class="form-group">
+            <label>
+                <label class="control-label"
+                       ng-bind="label">
+                </label>
+                <i class="fa fa-asterisk text-danger"
+                   ng-if="ngRequired"></i>
+            </label>
+            <input ng-model="ngModel"
+                   class="form-control"
+                   ng-required="ngRequired"
+                   name="{{::inputName}}">
+            <div ng-messages="formCtrl[inputName].$error"
+                 ng-if="(formCtrl[inputName].$invalid &&
+                 formCtrl[inputName].$touched)">
+                <div ng-messages-include="arquitetura/templates/ng-messages.html"></div>
+            </div>
+        </div>
+    </div>
+</div>
