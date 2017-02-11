@@ -1,3 +1,5 @@
-<div ng-controller="CadastroCarroController">
-    {{nome}}
+<div ng-controller="CadastroCarroController as vm">
+    <pd-super-crud titulo="Cadastro de carro"
+                   service="vm.pdService">
+    </pd-super-crud>
 </div>

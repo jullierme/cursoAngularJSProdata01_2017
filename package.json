@@ -14,6 +14,7 @@
     "angular-aria": "v1.5.11",
     "angular-i18n": "v1.5.11",
     "angular-loading-bar": "^0.9.0",
+    "angular-local-storage": "^0.5.2",
     "angular-material": "v1.1.1",
     "angular-messages": "v1.5.11",
     "angular-toastr": "v2.1.1",

@@ -10,13 +10,14 @@
         'ngMaterial',
         'ui.router',
         'oc.lazyLoad',
-        'angular-loading-bar'
+        'angular-loading-bar',
+        'LocalStorageModule'
     ]);
 
     angular.module('pdCurso')
         .config(config);
 
-    function config($mdThemingProvider, $compileProvider,
+    function config($mdThemingProvider,
                     cfpLoadingBarProvider) {
         $mdThemingProvider.theme('blue')
             .primaryPalette('blue')

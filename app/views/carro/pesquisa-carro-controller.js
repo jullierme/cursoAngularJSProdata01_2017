@@ -1,6 +1,13 @@
-angular.module('pdCurso')
-    .controller('PesquisaCarroController',PesquisaCarroController);
+(function () {
+    'use strict';
 
-function PesquisaCarroController($scope) {
-    $scope.nome = '====> Pesquisa de carro';
-}
+    angular.module('pdCurso')
+        .controller('PesquisaCarroController',PesquisaCarroController);
+
+    function PesquisaCarroController(CarroService) {
+        var vm = this;
+        vm.pdService = CarroService.getPdService();
+        vm.nome = '====> Pesquisa de carro';
+    }
+
+})();

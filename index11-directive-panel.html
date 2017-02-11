@@ -18,6 +18,7 @@
 
 
     <link rel="stylesheet" href="app/css/pd-app.css">
+    <link rel="stylesheet" href="arquitetura/directives/pd-input-text/pd-input-text.css">
     <!-- -->
 
     <!-- imports externos -->
@@ -41,21 +42,48 @@
     <script src="app/config/pd-rotas.config.js"></script>
     <script src="arquitetura/services/pd-alert.service.js"></script>
     <script src="app/filter/pd-maiusculo.filter.js"></script>
-    <script src="app/controller/index9.controller.js"></script>
+    <script src="app/controller/index10.controller.js"></script>
 
-
+    <script src="arquitetura/directives/pd-hello-world/pd-hello-world.directive.js"></script>
+    <script src="arquitetura/directives/pd-input-text/pd-input-text.directive.js"></script>
+    <script src="arquitetura/directives/pd-select/pd-select.directive.js"></script>
+    <script src="arquitetura/directives/pd-panel/pd-panel.directive.js"></script>
 </head>
 <body ng-app="pdCurso"
-      ng-controller="Index9Controller as vm">
+      ng-controller="Index10Controller as vm">
 
-<button ng-click="vm.carregarListaDeDados()"
-        ng-disabled="vm.isProcessando"
-        class="btn btn-primary">
-    Carregar lista de dados
-</button>
 
-<div ui-grid="vm.gridOptions"></div>
+<pd-panel titulo="Cadastro de alguma coisa"
+          tipo="success"
+          class-icone="fa fa-edit">
 
-{{vm.listaDeDados.length}}
+    <form name="myForm">
+        <div class="row">
+            <pd-input-text
+                    label="Nome"
+                    ng-model="vm.entidade.nome"
+                    colspan="3"
+                    ng-required="true">
+            </pd-input-text>
+            <pd-input-text
+                    label="Sobrenome"
+                    ng-model="vm.entidade.sobrenome">
+            </pd-input-text>
+            <pd-select label="Sexo"
+                       ng-model="vm.entidade.sexo"
+                       ng-required="true"
+                       provider="vm.sexo"
+            >
+            </pd-select>
+            {{vm.entidade.sexo}}
+        </div>
+    </form>
+</pd-panel>
+
+<pd-panel titulo="Cadastro de alguma coisa"
+          tipo="danger">
+</pd-panel>
+
+
 </body>
 </html>

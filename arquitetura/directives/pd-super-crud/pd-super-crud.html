@@ -1,0 +1,35 @@
+<div class="panel panel-primary" ng-cloak>
+    <div class="panel-heading"
+         ng-if="titulo">
+        <i ng-class="::classIcone"
+           style="margin-right: 5px"></i>
+        <span ng-bind="::titulo"></span>
+
+        <div ng-transclude="header"></div>
+    </div>
+
+    <form novalidate name="{{formName}}">
+        <div class="panel-body">
+            <div ng-transclude="body"></div>
+        </div>
+
+        <div class="panel-footer">
+            <div layout="row">
+                <md-button class="md-raised md-primary"
+                           ng-click="service.salvar()">
+                    Salvar
+                </md-button>
+                <md-button class="md-raised"
+                           ng-click="service.limpar()">
+                    Limpar
+                </md-button>
+                <md-button class="md-raised md-warn"
+                           ng-click="service.excluir()">
+                    Excluir
+                </md-button>
+
+                <div ng-transclude="footer"></div>
+            </div>
+        </div>
+    </form>
+</div>

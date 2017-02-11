@@ -18,6 +18,7 @@
 
 
     <link rel="stylesheet" href="app/css/pd-app.css">
+    <link rel="stylesheet" href="arquitetura/directives/pd-input-text/pd-input-text.css">
     <!-- -->
 
     <!-- imports externos -->
@@ -34,28 +35,31 @@
     <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="node_modules/oclazyload/dist/ocLazyLoad.js"></script>
     <script src="node_modules/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="node_modules/angular-local-storage/dist/angular-local-storage.min.js"></script>
 
     <!-- fim imports externos -->
 
     <script src="app/config/pd-app.module.js"></script>
     <script src="app/config/pd-rotas.config.js"></script>
     <script src="arquitetura/services/pd-alert.service.js"></script>
+    <script src="arquitetura/services/pd-storage.service.js"></script>
     <script src="app/filter/pd-maiusculo.filter.js"></script>
-    <script src="app/controller/index9.controller.js"></script>
+    <script src="app/controller/index14-logado.controller.js"></script>
 
+    <script src="arquitetura/directives/pd-hello-world/pd-hello-world.directive.js"></script>
+    <script src="arquitetura/directives/pd-input-text/pd-input-text.directive.js"></script>
+    <script src="arquitetura/directives/pd-select/pd-select.directive.js"></script>
+    <script src="arquitetura/directives/pd-panel/pd-panel.directive.js"></script>
+    <script src="arquitetura/directives/pd-crud/pd-crud.directive.js"></script>
 
 </head>
 <body ng-app="pdCurso"
-      ng-controller="Index9Controller as vm">
+      ng-controller="Index14Logado as vm"
+      md-theme="blue"
+      ng-cloak>
 
-<button ng-click="vm.carregarListaDeDados()"
-        ng-disabled="vm.isProcessando"
-        class="btn btn-primary">
-    Carregar lista de dados
-</button>
+{{vm.usuarioLogado}}
 
-<div ui-grid="vm.gridOptions"></div>
-
-{{vm.listaDeDados.length}}
+<button ng-click="vm.sair()"> Sair </button>
 </body>
 </html>

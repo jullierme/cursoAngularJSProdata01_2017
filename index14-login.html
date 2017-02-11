@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Curso</title>
+
+    <!-- -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="node_modules/angular-toastr/dist/angular-toastr.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="node_modules/angular-ui-grid/ui-grid.css">
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+    <link rel="stylesheet" href="node_modules/angular-loading-bar/build/loading-bar.css">
+
+
+    <link rel="stylesheet" href="app/css/pd-app.css">
+    <link rel="stylesheet" href="arquitetura/directives/pd-input-text/pd-input-text.css">
+    <!-- -->
+
+    <!-- imports externos -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-messages/angular-messages.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.js"></script>
+
+    <script src="node_modules/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="node_modules/angular-ui-grid/ui-grid.js"></script>
+    <script src="node_modules/angular-material/angular-material.js"></script>
+    <script src="node_modules/angular-i18n/angular-locale_pt-br.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="node_modules/oclazyload/dist/ocLazyLoad.js"></script>
+    <script src="node_modules/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="node_modules/angular-local-storage/dist/angular-local-storage.min.js"></script>
+
+    <!-- fim imports externos -->
+
+    <script src="app/config/pd-app.module.js"></script>
+    <script src="app/config/pd-rotas.config.js"></script>
+    <script src="arquitetura/services/pd-alert.service.js"></script>
+    <script src="arquitetura/services/pd-storage.service.js"></script>
+    <script src="app/filter/pd-maiusculo.filter.js"></script>
+    <script src="app/controller/index14-login.controller.js"></script>
+
+    <script src="arquitetura/directives/pd-hello-world/pd-hello-world.directive.js"></script>
+    <script src="arquitetura/directives/pd-input-text/pd-input-text.directive.js"></script>
+    <script src="arquitetura/directives/pd-select/pd-select.directive.js"></script>
+    <script src="arquitetura/directives/pd-panel/pd-panel.directive.js"></script>
+    <script src="arquitetura/directives/pd-crud/pd-crud.directive.js"></script>
+
+</head>
+<body ng-app="pdCurso"
+      ng-controller="Index14Login as vm"
+      md-theme="blue"
+      ng-cloak>
+
+<div class="container">
+
+    <div class="row" style="margin-top:20px">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+            <form role="form" novalidate>
+                <fieldset ng-if="vm.view === 'login'">
+                    <h2>Login</h2>
+                    <hr class="colorgraph">
+                    <div class="form-group">
+                        <input type="text"
+                               class="form-control input-lg"
+                               placeholder="Login"
+                               ng-model="vm.entidade.login">
+                    </div>
+                    <div class="form-group">
+                        <input type="password"
+                               class="form-control input-lg"
+                               placeholder="Password"
+                               ng-model="vm.entidade.senha">
+                    </div>
+                    <hr class="colorgraph">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <button type="submit"
+                                    class="btn btn-lg btn-success btn-block"
+                                    ng-click="vm.logar()">
+                                Logar
+                            </button>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <button type="submit"
+                                    class="btn btn-lg btn-primary btn-block"
+                                    ng-click="vm.irParaRegistroDeUsuario()">
+                                Registrar
+                            </button>
+                        </div>
+                    </div>
+                </fieldset>
+
+
+                <fieldset ng-if="vm.view === 'registrar'">
+                    <h2>Registrar novo usuário</h2>
+                    <hr class="colorgraph">
+                    <div class="form-group">
+                        <input type="text"
+                               class="form-control input-lg"
+                               placeholder="Nome"
+                               ng-model="vm.entidade.nome">
+                    </div>
+                    <div class="form-group">
+                        <input type="text"
+                               class="form-control input-lg"
+                               placeholder="Login"
+                               ng-model="vm.entidade.login">
+                    </div>
+                    <div class="form-group">
+                        <input type="password"
+                               class="form-control input-lg"
+                               placeholder="Password"
+                               ng-model="vm.entidade.senha">
+                    </div>
+                    <hr class="colorgraph">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <button class="btn btn-lg btn-success btn-block"
+                                    ng-click="vm.salvar()">
+                                Salvar
+                            </button>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <button class="btn btn-lg btn-primary btn-block"
+                                    ng-click="vm.irParaLogin()">
+                                Voltar
+                            </button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
